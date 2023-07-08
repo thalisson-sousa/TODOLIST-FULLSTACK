@@ -43,7 +43,7 @@ app.listen(PORT, () => console.log(`Server run port ${PORT}`));
 
 module.exports = app;
 
-```js
+```
 
 <h3>route.js:</h3>
 <p>importar o express</p>
@@ -68,7 +68,7 @@ tasksController.updateTask);
 
 module.exports = router;
 
-```js
+```
 
 <h3>controller.js:</h3>
 <p>Importar os serviços</p>
@@ -108,7 +108,7 @@ module.exports = {
     updateTask
 };
 
-```js
+```
 
 <h3>services.js:</h3>
 <p>Import o arquivo connection</p>
@@ -160,4 +160,4 @@ module.exports = {
     updateTask
 };
 
-```js
+```
