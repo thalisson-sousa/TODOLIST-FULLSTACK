@@ -26,8 +26,8 @@
 <p>sobe o servidor com o express</p>
 <p>Cria o arquivo de rotas e usa no app</p>
 
-<code>
-    const express = require('express');
+```js
+const express = require('express');
 const router = require('./router');
 
 const app = express();
@@ -42,7 +42,8 @@ const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => console.log(`Server run port ${PORT}`));
 
 module.exports = app;
-</code>
+
+```js
 
 <h3>route.js:</h3>
 <p>importar o express</p>
@@ -50,8 +51,8 @@ module.exports = app;
 <p>Cria as rotas(get, post, update, delete) e chama as funçoes da controller</p>
 <p>Cria os middleware para fazer as validações nos metodos (post e update)</p>
 
-<code>
-    const express = require('express');
+```js
+const express = require('express');
 const tasksController = require('./controllers/tasksController');
 const tasksMiddleware = require('./middlewares/tasksMiddleware');
 
@@ -66,14 +67,15 @@ tasksMiddleware.validateFieldStatus,
 tasksController.updateTask);
 
 module.exports = router;
-</code>
+
+```js
 
 <h3>controller.js:</h3>
 <p>Importar os serviços</p>
 <p>Criar as funções asyncronas que vao receber ou passar os dados vindos das rotas para os serviços</p>
 <p></p>
 
-<code>
+```js
     const tasksModel = require('../models/tasksModel');
 
 const getAll = async (_req, res) => {
@@ -105,7 +107,8 @@ module.exports = {
     deleteTask,
     updateTask
 };
-</code>
+
+```js
 
 <h3>services.js:</h3>
 <p>Import o arquivo connection</p>
@@ -117,10 +120,10 @@ module.exports = {
     <li>Criar Metodo DELETE</li>
 </ul>
 
-<code>
-const connection = require('./connection');
+```js
+    const connection = require('./connection');
 
-const getAll = async () => {
+    const getAll = async () => {
     const tasks = await connection.execute('SELECT * FROM tasks');
     return tasks[0];
 }
@@ -156,7 +159,5 @@ module.exports = {
     deleteTask,
     updateTask
 };
-</code>
 
-<p></p>
-<p></p>
+```js
